@@ -1,4 +1,4 @@
-// import logo from '../../assets/react.svg'
+import logo from '../../assets/react.svg'
 import { useState } from 'react'
 
 const SimpleForm = () => {
@@ -20,7 +20,7 @@ const SimpleForm = () => {
     //? Paso #1: Crear el formulario base en JSX
     <div className='login'>
       <div className='login-container'>
-        {/* <img src={logo} alt='logo' /> */}
+        <img src={logo} alt='logo' />
         
         <form onSubmit={handleSubmit}>
             {/* Paso #3: Guardo la información en el estado de */}
