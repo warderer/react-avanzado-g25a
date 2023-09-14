@@ -21,7 +21,7 @@ const ReactHookForm = () => {
       ,
   }).required()
    
-   const {register, handleSubmit, formState: {error}} = useForm ({
+   const {register, handleSubmit, formState: {errors}} = useForm ({
      //RESOLVER, SIRVE PARA ESTABLECER EL ESQUEMA DE VALIDACIÓN,
      //PARA ELLO USAMOS LA FUNCIÓN yupResolver y le pasamos como argumento
      // nuestro schema userFormSchema.
@@ -48,7 +48,7 @@ const ReactHookForm = () => {
           id='firstName'
           {...register('firstName', {required: true, maxLength: 20})}
         />
-        <p>{error.firstName?.message}</p>
+        <p>{errors.firstName?.message}</p>
 
         <label htmlFor='lastName'>Apellido</label>
         <input
@@ -58,7 +58,7 @@ const ReactHookForm = () => {
           id='lastName'
           {...register('lastName',{pattern: /^[A-Za-z]+$/i })}
         />
-        <p>{error.lastName?.message}</p>
+        <p>{errors.lastName?.message}</p>
 
         <label htmlFor='age'>Edad</label>
         <input
@@ -68,7 +68,7 @@ const ReactHookForm = () => {
           id='age'
           {...register('age')}
         />
-        <p>{error.age?.message}</p>
+        <p>{errors.age?.message}</p>
 
         <label htmlFor='gender'>Genero</label>
         <select name='gender' id='gender'>
@@ -77,7 +77,7 @@ const ReactHookForm = () => {
           <option value='F'>Femenino</option>
           <option value='O'>Otro</option>
         </select>
-        <p>{error.gender?.message}</p>
+        <p>{errors.gender?.message}</p>
 
         <label htmlFor='email'>Email</label>
         <input
@@ -87,7 +87,7 @@ const ReactHookForm = () => {
           id='email'
           {...register('email')}
         />
-        <p>{error.email?.message}</p>
+        <p>{errors.email?.message}</p>
 
         <label htmlFor='password'>Password</label>
         <input
@@ -96,7 +96,7 @@ const ReactHookForm = () => {
           id='password'
           {...register('password')}
         />
-        <p>{error.password?.message}</p>
+        <p>{errors.password?.message}</p>
 
         <button type='submit'>
           Iniciar Sesion
